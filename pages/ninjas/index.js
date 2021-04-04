@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '../../styles/Ninjas.module.css';
 
 // This runs before the component is rendered 
@@ -17,11 +18,11 @@ const Ninjas = ({ ninjas }) => {
             <h1>All Ninjas</h1>
             {
                 ninjas.map(ninja => (
-                    <div key={ninja.id}>
+                    <Link href={`/ninjas/${ninja.id}`} key={ninja.id}>
                         <a className={styles.single}>
                             <h3>{ninja.name}</h3>
                         </a>
-                    </div>
+                    </Link>
                 ))
             }
         </div>
